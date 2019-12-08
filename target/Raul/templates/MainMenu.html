@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <link rel="stylesheet" type="text/css" href="resources/genericstyle.css">
+    <link rel="stylesheet" type="text/css" href="resources/loginStyle.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Welcome to Raul</title>
     <link rel="stylesheet"  type="text/css" href="resources/genericstyle.css"/>
 </head>
 <body>
 <div class="bg">
-<table>
-    <tr>
-        <td>
-        <div class="imgContainer">
-            <div>
-            <img src="resources/image%20(11).png">
-        </div>
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Tabs Titles -->
+
+            <!-- Icon -->
+            <div class="fadeIn first">
+                <img src="resources/image (11).png" id="icon" alt="User Icon"/>
             </div>
-        </td>
-    </tr>
-</table>
-</div>
+
+            <!-- Login Form -->
+            <form method="post">
+                <input type="submit" class="fadeIn fourth" value="Create Tournament">
+                <input type="submit" class="fadeIn fourth" value="See tournaments">
+            </form>
+        </div>
+    </div>
 </body>
 </html>

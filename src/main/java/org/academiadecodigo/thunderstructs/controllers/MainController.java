@@ -19,6 +19,10 @@ public class MainController {
         return "MainMenu";
     }
 
+    @RequestMapping(method = RequestMethod.POST, value = "/MainMenu")
+    public String createTournament(){
+        return "tournamentform";
+    }
 
     @Autowired
     public void setApp(App app) {

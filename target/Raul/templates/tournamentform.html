@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="resources/genericstyle.css">
+    <link rel="stylesheet" type="text/css" href="resources/loginStyle.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Login page</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+<div class="bg">
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Tabs Titles -->
+
+            <!-- Icon -->
+            <div class="fadeIn first">
+                <img src="resources/image (11).png" id="icon" alt="User Icon"/>
+            </div>
+
+            <table class="table table-striped table-dark">
+                <tr>
+                    <th>Player Name</th>
+                    <th>Team Selected</th>
+                    <th>Score</th>
+                </tr>
+                <tr th:each="player : ${tournament.players}">
+                    <td th:text="${player.name}"></td>
+                    <td th:text="${player.team}"></td>
+                    <td th:text="${player.score}"></td>
+                </tr>
+            </table>
+            <div class="btn-toolbar">
+                <a class="btn btn-warning btn-margin-left" th:href="@{'raul/add'}" role="button">New Player</a>
+                <a class="btn btn-danger btn-margin-left" href="/xD123/customer/exit" role="button">Cancel Tournament</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
