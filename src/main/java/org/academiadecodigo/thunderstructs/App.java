@@ -29,6 +29,8 @@ public class App {
 
         users.add(user1);
         users.add(user2);
+
+        tournamentList.add(PlayersList.populate());
     }
 
     public List<User> getUsers() {

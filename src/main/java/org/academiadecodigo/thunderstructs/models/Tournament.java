@@ -30,4 +30,18 @@ public class Tournament {
     public List<Player> getPlayers() {
         return players;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setPlayers(List<Player> players) {
+        this.players = players;
+    }
 }
+
+

@@ -59,4 +59,8 @@ public class MockTournamentService implements TournamentService {
     public List<Player> getPlayers() {
         return tournament.getPlayers();
     }
+
+    public void setTournament(Tournament tournament) {
+        this.tournament = tournament;
+    }
 }
