@@ -15,15 +15,6 @@ public class MockTournamentService implements TournamentService {
 
     private Tournament tournament;
 
-
-
-   @Override
-    public void init(List<Player> players) {
-
-        tournament.setGroups(groupService.generateGroups(players));
-
-    }
-
     @Override
     public boolean checkGroupWinners() {
 
@@ -62,5 +53,10 @@ public class MockTournamentService implements TournamentService {
 
         }
         return winners;
+    }
+
+    @Override
+    public List<Player> getPlayers() {
+        return tournament.getPlayers();
     }
 }

@@ -6,12 +6,12 @@ import java.util.List;
 
 public interface TournamentService {
 
-    void init (List<Player> players);
-
     boolean checkGroupWinners ();
 
     void generateFinal ();
 
     java.util.List<Player> getWinnersList();
+
+    List<Player> getPlayers();
 
 }
