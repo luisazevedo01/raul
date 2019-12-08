@@ -53,5 +53,4 @@ public class TournamentGenerator {
         tournament.setGroups(mockGroupService.getGroupList());
         return tournament;
     }
-
 }

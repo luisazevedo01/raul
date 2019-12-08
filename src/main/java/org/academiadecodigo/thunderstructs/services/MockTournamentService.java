@@ -1,5 +1,6 @@
 package org.academiadecodigo.thunderstructs.services;
 
+import org.academiadecodigo.thunderstructs.App;
 import org.academiadecodigo.thunderstructs.models.Group;
 import org.academiadecodigo.thunderstructs.models.Player;
 import org.academiadecodigo.thunderstructs.models.Tournament;
@@ -15,22 +16,21 @@ public class MockTournamentService implements TournamentService {
 
 
     private Tournament tournament;
+    private App app;
 
     @Override
     public boolean checkGroupWinners() {
-
-        boolean winners = true;
 
         for (Group g: tournament.getGroups()) {
 
             if (g.getWinner() == null) {
 
-                winners = false;
+                return false;
 
             }
 
         }
-        return winners;
+        return true;
     }
 
     @Override
@@ -66,8 +66,19 @@ public class MockTournamentService implements TournamentService {
         return tournament.getGroups();
     }
 
+    @Override
+    public Tournament getTournament(int id) {
+
+        return app.getTournamentList().get(id - 1);
+    }
+
     @Autowired
     public void setTournament(Tournament tournament) {
         this.tournament = tournament;
+    }
+
+    @Autowired
+    public void setApp(App app) {
+        this.app = app;
     }
 }
