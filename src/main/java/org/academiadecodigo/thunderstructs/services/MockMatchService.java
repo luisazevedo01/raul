@@ -1,7 +1,9 @@
 package org.academiadecodigo.thunderstructs.services;
 
+import org.academiadecodigo.thunderstructs.models.Group;
 import org.academiadecodigo.thunderstructs.models.Match;
 import org.academiadecodigo.thunderstructs.models.Player;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedList;
@@ -10,12 +12,23 @@ import java.util.List;
 @Service
 public class MockMatchService implements MatchService {
 
+
+    private MockGroupService mockGroupService;
     private List<Match> matches;
 
 
     public MockMatchService() {
-        this.matches = new LinkedList<>();
 
+    }
+
+    @Autowired
+    public void setMatches(List<Match> matches) {
+        this.matches = matches;
+    }
+
+    @Autowired
+    public void setMockGroupService(MockGroupService mockGroupService) {
+        this.mockGroupService = mockGroupService;
     }
 
     @Override
@@ -56,13 +69,13 @@ public class MockMatchService implements MatchService {
     }
 
     @Override
-    public void getResult(Match match){
+    public void getResult(Match match) {
 
-        if(match.getP1Goals() < match.getP2Goals()){
+        if (match.getP1Goals() < match.getP2Goals()) {
             match.getP2().setScore(match.getP2().getScore() + 3);
             return;
 
-        }else if(match.getP1Goals() > match.getP2Goals()){
+        } else if (match.getP1Goals() > match.getP2Goals()) {
             match.getP1().setScore(match.getP2().getScore() + 3);
             return;
         }
@@ -77,9 +90,9 @@ public class MockMatchService implements MatchService {
 
         List<Match> matches = new LinkedList<>();
 
-        for (int i = 0; i < playerList.size() - 1 ; i++) {
+        for (int i = 0; i < playerList.size() - 1; i++) {
 
-            for (int j = i + 1 ; j < playerList.size()  ; j++) {
+            for (int j = i + 1; j < playerList.size(); j++) {
 
                 matches.add(new Match(playerList.get(i), playerList.get(j)));
 
@@ -87,4 +100,6 @@ public class MockMatchService implements MatchService {
         }
         return matches;
     }
+
 }
+

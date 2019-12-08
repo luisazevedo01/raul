@@ -1,5 +1,8 @@
 package org.academiadecodigo.thunderstructs.models;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Match {
 
     private Group group;
