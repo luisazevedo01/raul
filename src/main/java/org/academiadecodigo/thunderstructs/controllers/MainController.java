@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class MainController {
 
-    @RequestMapping(method = RequestMethod.GET, value = {"","/"})
+    @RequestMapping(method = RequestMethod.GET, value = "/MainMenu")
     public String showMainMenu(){
         return "MainMenu";
     }
