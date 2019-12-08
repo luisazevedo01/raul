@@ -4,8 +4,10 @@ import java.util.List;
 
 public class Tournament {
 
+
     private String name;
     private List<Group> groups;
+
 
     public String getName() {
         return name;
