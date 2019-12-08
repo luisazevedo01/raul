@@ -2,6 +2,7 @@ package org.academiadecodigo.thunderstructs.services;
 
 import org.academiadecodigo.thunderstructs.App;
 import org.academiadecodigo.thunderstructs.models.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,8 +12,10 @@ public class RegisterService {
 
     private App app;
 
-    public RegisterService() {
-        this.app = new App();
+
+    @Autowired
+    public void setApp(App app) {
+        this.app = app;
     }
 
     public boolean saveUser(User user){
@@ -42,6 +45,7 @@ public class RegisterService {
        }
        return false;
     }
+
 
 
 }

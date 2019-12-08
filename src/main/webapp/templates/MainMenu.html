@@ -21,9 +21,9 @@
     </tr>
 </table>
     <table>
-        <th:block th:each="tournament : ${tournamentList}">
+        <th:block th:each="tournament : ${tournaments}">
             <tr>
-                <td th:text="${user.login}">...</td>
+                <td th:text="${t}">...</td>
                 <td th:text="${user.name}">...</td>
             </tr>
             <tr>
