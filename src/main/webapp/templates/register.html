@@ -2,38 +2,47 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="resources/genericstyle.css" rel="stylesheet" type="text/css"/>
+
+
 </head>
 <body>
-<div>
-    <form class="form-horizontal" th:object="${user}" th:action="@{'/register'}" method="post">
+<div class="row align-items-center justify-content-md-center  bg">
 
-        <div class="form-group" th:classappend="${#fields.hasErrors('username')} ? has-error">
-            <label class="col-sm-2 control-label">Username:</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" th:field="*{username}"/>
-                <span class="help-block" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">First Name error messages</span>
-            </div>
+    <div class="card" style="width: 18rem;">
+        <img src="resources/image%20(11).png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <form id="login-form" class="form" th:object="${user}" th:action="@{'/register'}" method="post">
+                <h3 class="text-center text-info">Register</h3>
+                <div class="form-group">
+                    <label for="username" class="text-info">Name:</label><br>
+                    <input type="text" name="name" id="name" class="form-control" th:field="*{name}">
+                    <span class="help-block" th:if="${#fields.hasErrors('name')}"
+                          th:errors="*{name}">Name error messages</span>
+                </div>
+                <div class="form-group">
+                    <label for="username" class="text-info">Username:</label><br>
+                    <input type="text" name="username" id="username" class="form-control"
+                           th:field="*{username}">
+                    <span class="help-block" th:if="${#fields.hasErrors('username')}"
+                          th:errors="*{username}">First Name error messages</span>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="text-info">Password:</label><br>
+                    <input type="text" name="password" id="password" class="form-control"
+                           th:field="*{password}">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-info btn-md">Submit</button>
+                    <button type="cancel" class="btn btn-danger" name="action" value="cancel">Cancel
+                    </button>
+                </div>
+            </form>
         </div>
-        <div class="form-group">
-            <label class="col-sm-2 control-label">Name:</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" th:field="*{name}"/>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-2 control-label">Password</label>
-            <div class="col-sm-10">
-                <input type="password" class="form-control" th:field="*{password}"/>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-3">
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <button type="cancel" class="btn btn-danger" name="action" value="cancel">Cancel</button>
-            </div>
-        </div>
-    </form>
-</div>
+    </div>
+
 </body>
 </html>
