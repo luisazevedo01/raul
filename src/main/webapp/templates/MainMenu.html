@@ -14,10 +14,23 @@
             <div>
             <img src="resources/image%20(11).png">
         </div>
+            <div>
+            </div>
             </div>
         </td>
     </tr>
 </table>
+    <table>
+        <th:block th:each="tournament : ${tournamentList}">
+            <tr>
+                <td th:text="${user.login}">...</td>
+                <td th:text="${user.name}">...</td>
+            </tr>
+            <tr>
+                <td colspan="2" th:text="${user.address}">...</td>
+            </tr>
+        </th:block>
+    </table>
 </div>
 </body>
 </html>
