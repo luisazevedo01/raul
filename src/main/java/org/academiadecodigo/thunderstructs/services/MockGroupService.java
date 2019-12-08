@@ -53,7 +53,7 @@ public class MockGroupService implements GroupService {
     }
 
     @Override
-    public List<Match> getMatches( Group group) {
+    public List<Match> getMatches(Group group) {
         return group.getMatches();
     }
 

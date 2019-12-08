@@ -2,12 +2,14 @@ package org.academiadecodigo.thunderstructs.models;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 public class User {
 
     @NotNull(message = "Name is mandatory")
     @NotBlank(message = "Name is mandatory")
+    @Pattern(regexp = "^\\[A-Za-z]*$")
     @Size(min = 3, max = 64)
     private String name;
 
