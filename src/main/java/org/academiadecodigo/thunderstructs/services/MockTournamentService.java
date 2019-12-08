@@ -3,6 +3,7 @@ package org.academiadecodigo.thunderstructs.services;
 import org.academiadecodigo.thunderstructs.models.Group;
 import org.academiadecodigo.thunderstructs.models.Player;
 import org.academiadecodigo.thunderstructs.models.Tournament;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedList;
@@ -60,6 +61,12 @@ public class MockTournamentService implements TournamentService {
         return tournament.getPlayers();
     }
 
+    @Override
+    public List<Group> getGroups() {
+        return tournament.getGroups();
+    }
+
+    @Autowired
     public void setTournament(Tournament tournament) {
         this.tournament = tournament;
     }

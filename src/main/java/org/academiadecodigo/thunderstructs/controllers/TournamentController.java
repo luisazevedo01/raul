@@ -1,9 +1,7 @@
 package org.academiadecodigo.thunderstructs.controllers;
 
-import org.academiadecodigo.thunderstructs.PlayersList;
 import org.academiadecodigo.thunderstructs.models.Group;
 import org.academiadecodigo.thunderstructs.models.Player;
-import org.academiadecodigo.thunderstructs.models.Tournament;
 import org.academiadecodigo.thunderstructs.services.GroupService;
 import org.academiadecodigo.thunderstructs.services.TournamentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,28 +18,27 @@ import java.util.List;
 public class TournamentController {
 
 
-    @Autowired
     private TournamentService tournamentService;
-
-    @Autowired
     private GroupService groupService;
 
-    public void setGroupService(GroupService groupService) {
-        this.groupService = groupService;
-    }
 
+    @Autowired
     public void setTournamentService(TournamentService tournamentService) {
         this.tournamentService = tournamentService;
     }
 
+    @Autowired
+    public void setGroupService(GroupService groupService) {
+        this.groupService = groupService;
+    }
+
+
     @RequestMapping(method = RequestMethod.GET, path = "/{id}")
     public String showTournament (Model model, @PathVariable Integer id) {
 
-        PlayersList.populate();
 
-        
         List<Player> players = tournamentService.getPlayers();
-        List<Group> groups = groupService.generateGroups(players);
+        List<Group> groups = tournamentService.getGroups();
 
         model.addAttribute("groups", groups);
         model.addAttribute("players",tournamentService.getPlayers());
