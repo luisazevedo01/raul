@@ -33,11 +33,10 @@ public class LoginController {
 
         loginServiceImpl.authentication(userLoginDto.getUsername(), userLoginDto.getPassword());
 
-        if(loginServiceImpl.isAuthenticate()){
-            return "MainMenu";
+        if(!loginServiceImpl.isAuthenticate() || loginServiceImpl.getLoggedUser() == null){
+            return "login";
         }
-        return "login";
+        return "redirect:/MainMenu";
     }
-
 
 }

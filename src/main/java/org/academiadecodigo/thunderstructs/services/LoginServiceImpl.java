@@ -12,7 +12,8 @@ public class LoginServiceImpl implements LoginService {
 
 
     private App app;
-    private boolean authenticate;
+    private boolean authenticate = false;
+    private User loggedUser;
 
 
     @Autowired
@@ -22,25 +23,25 @@ public class LoginServiceImpl implements LoginService {
 
     public User authentication(String username, String password) {
         List<User> users = app.getUsers();
-        User loggedUser =  null;
 
         for (User user : users) {
-
-            if (username == null || password == null) {
-                authenticate = false;
-                break;
-            }
 
             if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
                 authenticate = true;
                 loggedUser = user;
+                return loggedUser;
 
             }
         }
+        loggedUser = null;
         return loggedUser;
     }
 
     public boolean isAuthenticate() {
         return authenticate;
+    }
+
+    public User getLoggedUser() {
+        return loggedUser;
     }
 }

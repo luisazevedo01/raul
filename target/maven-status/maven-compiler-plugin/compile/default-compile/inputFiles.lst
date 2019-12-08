@@ -1,4 +1,5 @@
 /Users/codecadet/Desktop/raul/src/main/java/org/academiadecodigo/thunderstructs/models/Match.java
+/Users/codecadet/Desktop/raul/src/main/java/org/academiadecodigo/thunderstructs/controllers/RegisterController.java
 /Users/codecadet/Desktop/raul/src/main/java/org/academiadecodigo/thunderstructs/services/GenericService.java
 /Users/codecadet/Desktop/raul/src/main/java/org/academiadecodigo/thunderstructs/models/Group.java
 /Users/codecadet/Desktop/raul/src/main/java/org/academiadecodigo/thunderstructs/models/UserLoginDto.java
@@ -9,5 +10,6 @@
 /Users/codecadet/Desktop/raul/src/main/java/org/academiadecodigo/thunderstructs/controllers/LoginController.java
 /Users/codecadet/Desktop/raul/src/main/java/org/academiadecodigo/thunderstructs/services/LoginService.java
 /Users/codecadet/Desktop/raul/src/main/java/org/academiadecodigo/thunderstructs/App.java
+/Users/codecadet/Desktop/raul/src/main/java/org/academiadecodigo/thunderstructs/services/RegisterService.java
 /Users/codecadet/Desktop/raul/src/main/java/org/academiadecodigo/thunderstructs/models/User.java
 /Users/codecadet/Desktop/raul/src/main/java/org/academiadecodigo/thunderstructs/models/Tournament.java
