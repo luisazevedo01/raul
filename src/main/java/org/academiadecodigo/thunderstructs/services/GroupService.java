@@ -16,7 +16,7 @@ public interface GroupService {
 
     Group getGroup(Integer id);
 
-    List<Match> getMatches(List<Match> matches);
+    List<Match> getMatches(Group group);
 
 
 }

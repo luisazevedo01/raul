@@ -51,4 +51,13 @@ public class Group {
     public Integer getId() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        return "Group{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", winner=" + winner +
+                '}';
+    }
 }

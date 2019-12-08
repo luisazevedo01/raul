@@ -30,9 +30,9 @@ public class MockGroupService implements GroupService {
             } else {
                 groupB.getPlayers().add(player);
             }
+        }
             groups.add(groupA);
             groups.add(groupB);
-        }
         return groups;
     }
 
@@ -53,35 +53,8 @@ public class MockGroupService implements GroupService {
     }
 
     @Override
-    public List<Match> getMatches(List<Match> matches) {
-        return matches;
+    public List<Match> getMatches( Group group) {
+        return group.getMatches();
     }
 
-//    public static void main(String[] args) {
-//        MockGroupService mockGroupService = new MockGroupService();
-//
-//        Player player1 = new Player();
-//        player1.setName("Furnas");
-//        player1.setScore(1);
-//        Player player2 = new Player();
-//        player2.setName("João");
-//        player2.setScore(5);
-//        Player player3 = new Player();
-//        player3.setName("Jose");
-//        player3.setScore(2);
-//        Player player4 = new Player();
-//        player4.setName("Manel");
-//        player4.setScore(3);
-//
-//        LinkedList<Player> players = new LinkedList<>();
-//        players.add(player1);
-//        players.add(player2);
-//        players.add(player3);
-//        players.add(player4);
-//
-//        mockGroupService.generateGroups(players);
-//        System.out.println(mockGroupService.getGroup(2).getName());
-//        System.out.println(mockGroupService.getGroup(2).getPlayers());
-//        System.out.println(mockGroupService.sortPlayers(mockGroupService.getGroup(2)));
-//    }
 }
