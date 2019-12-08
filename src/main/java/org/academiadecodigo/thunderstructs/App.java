@@ -1,21 +1,25 @@
 package org.academiadecodigo.thunderstructs;
 
 import org.academiadecodigo.thunderstructs.models.Tournament;
+import org.academiadecodigo.thunderstructs.models.TournamentGenerator;
 import org.academiadecodigo.thunderstructs.models.User;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.util.LinkedList;
 import java.util.List;
+
 
 @Component
 public class App {
 
     private List<User> users;
     private List<Tournament> tournamentList;
+    private TournamentGenerator tournamentGenerator;
 
     public App() {
         this.users = new LinkedList<>();
+        this.tournamentList = new LinkedList<>();
+        this.tournamentGenerator = new TournamentGenerator();
         populate();
     }
 
@@ -32,6 +36,9 @@ public class App {
 
         users.add(user1);
         users.add(user2);
+
+
+        tournamentList.add(tournamentGenerator.populate());
     }
 
     public List<User> getUsers() {

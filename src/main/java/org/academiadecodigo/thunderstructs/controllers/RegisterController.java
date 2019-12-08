@@ -38,7 +38,7 @@ public class RegisterController {
         }
 
         if(registerService.saveUser(user)){
-            return "redirect:register/" + user.getUsername();
+            return "redirect:login";
         }
 
         return "register";
