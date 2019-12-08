@@ -1,13 +1,28 @@
 package org.academiadecodigo.thunderstructs.models;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class Group {
 
+    private Integer id;
     private String name;
     private List<Player> players;
     private List<Match> matches;
+    private Player winner;
 
+    public Group(Integer id) {
+        this.id = id;
+        players = new LinkedList<>();
+    }
+
+    public Player getWinner() {
+        return winner;
+    }
+
+    public void setWinner(Player winner) {
+        this.winner = winner;
+    }
 
     public String getName() {
         return name;
@@ -31,5 +46,9 @@ public class Group {
 
     public void setMatches(List<Match> matches) {
         this.matches = matches;
+    }
+
+    public Integer getId() {
+        return id;
     }
 }
