@@ -40,19 +40,13 @@ public class TournamentController {
         Tournament tournament = tournamentService.getTournament(id);
         List<Group> groups = tournamentService.getGroups();
 
-
-   /*     List<Player> players = tournament.getPlayers();
-        List<Group> groups = tournament.getGroups();*/
-/*
-        model.addAttribute("groups", groups);
-        model.addAttribute("players", players);*/
-
         model.addAttribute("tournament", tournament);
         model.addAttribute("groups", groups);
 
         return "/tournament";
     }
 
+    @RequestMapping
 
 
 }
