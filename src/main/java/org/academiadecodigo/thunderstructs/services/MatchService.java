@@ -1,6 +1,7 @@
 package org.academiadecodigo.thunderstructs.services;
 
 import org.academiadecodigo.thunderstructs.models.Match;
+import org.academiadecodigo.thunderstructs.models.Player;
 
 import java.util.List;
 
@@ -17,4 +18,6 @@ public interface MatchService {
     List<Match> list(Integer groupId);
 
     void getResult(Match match);
+
+    List<Match> generateMatches(List<Player> playerList);
 }

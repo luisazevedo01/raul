@@ -31,7 +31,7 @@ public class CalendarController {
         return "/calendar";
     }
 
-    @RequestMapping(method = RequestMethod.POST, path ={"/"})
+    @RequestMapping(method = RequestMethod.POST, path ={"/match"})
     public String postResults(@ModelAttribute("match") Match match){
 
         matchService.getResult(match);

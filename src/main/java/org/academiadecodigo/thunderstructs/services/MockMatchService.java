@@ -71,4 +71,20 @@ public class MockMatchService implements MatchService {
         match.getP2().setScore(match.getP2().getScore() + 1);
 
     }
+
+    @Override
+    public List<Match> generateMatches(List<Player> playerList) {
+
+        List<Match> matches = new LinkedList<>();
+
+        for (int i = 0; i < playerList.size() - 1 ; i++) {
+
+            for (int j = i + 1 ; j < playerList.size()  ; j++) {
+
+                matches.add(new Match(playerList.get(i), playerList.get(j)));
+
+            }
+        }
+        return matches;
+    }
 }
