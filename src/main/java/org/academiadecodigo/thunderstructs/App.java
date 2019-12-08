@@ -3,6 +3,7 @@ package org.academiadecodigo.thunderstructs;
 import org.academiadecodigo.thunderstructs.models.Tournament;
 import org.academiadecodigo.thunderstructs.models.User;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class App {
@@ -11,6 +12,7 @@ public class App {
     private List<Tournament> tournamentList;
 
     public App() {
+        users = new LinkedList<>();
         populate();
     }
 
