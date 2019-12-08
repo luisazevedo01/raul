@@ -15,4 +15,6 @@ public interface MatchService {
     void delete(Match match);
 
     List<Match> list(Integer groupId);
+
+    void getResult(Match match);
 }

@@ -1,6 +1,7 @@
 package org.academiadecodigo.thunderstructs.services;
 
 import org.academiadecodigo.thunderstructs.models.Match;
+import org.academiadecodigo.thunderstructs.models.Player;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedList;
@@ -52,5 +53,22 @@ public class MockMatchService implements MatchService {
             }
         }
         return matches;
+    }
+
+    @Override
+    public void getResult(Match match){
+
+        if(match.getP1Goals() < match.getP2Goals()){
+            match.getP2().setScore(match.getP2().getScore() + 3);
+            return;
+
+        }else if(match.getP1Goals() > match.getP2Goals()){
+            match.getP1().setScore(match.getP2().getScore() + 3);
+            return;
+        }
+
+        match.getP1().setScore(match.getP1().getScore() + 1);
+        match.getP2().setScore(match.getP2().getScore() + 1);
+
     }
 }
