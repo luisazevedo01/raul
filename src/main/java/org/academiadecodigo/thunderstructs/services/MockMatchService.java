@@ -1,5 +1,6 @@
 package org.academiadecodigo.thunderstructs.services;
 
+import org.academiadecodigo.thunderstructs.App;
 import org.academiadecodigo.thunderstructs.models.Group;
 import org.academiadecodigo.thunderstructs.models.Match;
 import org.academiadecodigo.thunderstructs.models.Player;
@@ -15,21 +16,32 @@ public class MockMatchService implements MatchService {
 
     private MockGroupService mockGroupService;
     private List<Match> matches;
+    private App app;
+
 
 
     public MockMatchService() {
 
+        matches = new LinkedList<>();
+
     }
 
-    @Autowired
-    public void setMatches(List<Match> matches) {
-        this.matches = matches;
-    }
-
+    /*@Autowired
+        public void setMatches(List<Match> matches) {
+            this.matches = matches;
+        }
+    */
     @Autowired
     public void setMockGroupService(MockGroupService mockGroupService) {
         this.mockGroupService = mockGroupService;
     }
+
+    @Autowired
+    public void setApp(App app) {
+        this.app = app;
+    }
+
+
 
     @Override
     public Match add(Match match) {
@@ -88,7 +100,7 @@ public class MockMatchService implements MatchService {
     @Override
     public List<Match> generateMatches(List<Player> playerList) {
 
-        List<Match> matches = new LinkedList<>();
+        playerList = app.getTournamentList().get(1).getGroups().get(1).getPlayers();
 
         for (int i = 0; i < playerList.size() - 1; i++) {
 
@@ -98,6 +110,7 @@ public class MockMatchService implements MatchService {
 
             }
         }
+
         return matches;
     }
 

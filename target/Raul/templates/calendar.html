@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+    <h2>Match List</h2>
+
+    <div th:each="match : ${matches}">
+
+        <h2 th:text="${match.p1.name} + ${match.p2.name}"></h2>
+        <form class="form-inline" th:object="${match}" th:action="@{'/calendar/' + ${id}}" method="post">
+            <label for="goalsP1">Goals:</label>
+            <input type="number" id="goalsP1" placeholder="Enter goals" name="goals">
+            <label for="goalsP2">Goals:</label>
+            <input type="number" id="goalsP2" placeholder="Enter goals" name="goals">
+            <button><a class="btn btn-success" th:href="@{'/calendar/' + ${id}}">Submit</a></button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
