@@ -1,12 +1,28 @@
 package org.academiadecodigo.thunderstructs.models;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Match {
 
+    private Group group;
     private Player p1;
     private Player p2;
     private int p1Goals;
     private int p2Goals;
 
+    public Match(Player p1, Player p2) {
+        this.p1 = p1;
+        this.p2 = p2;
+    }
+
+    public Group getGroup() {
+        return group;
+    }
+
+    public void setGroup(Group group) {
+        this.group = group;
+    }
 
     public Player getP1() {
         return p1;

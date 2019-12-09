@@ -31,9 +31,22 @@ public class MockGroupService implements GroupService {
                 groupB.getPlayers().add(player);
             }
         }
-            groups.add(groupA);
-            groups.add(groupB);
+        groups.add(groupA);
+        groups.add(groupB);
         return groups;
+    }
+
+
+    @Autowired
+    public void setMockMatchService(MockMatchService mockMatchService) {
+        this.mockMatchService = mockMatchService;
+    }
+
+    @Override
+    public List<Match> generateMatches( int groupId) {
+        List<Match> matches = mockMatchService.generateMatches(getGroup(groupId).getPlayers());
+        groups.get(groupId - 1).setMatches(matches);
+        return matches;
     }
 
     @Override

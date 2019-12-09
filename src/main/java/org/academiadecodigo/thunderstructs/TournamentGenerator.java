@@ -1,14 +1,17 @@
-package org.academiadecodigo.thunderstructs.models;
+package org.academiadecodigo.thunderstructs;
 
 import org.academiadecodigo.thunderstructs.models.Player;
 import org.academiadecodigo.thunderstructs.models.Team;
 import org.academiadecodigo.thunderstructs.models.Tournament;
 import org.academiadecodigo.thunderstructs.services.MockGroupService;
+import org.academiadecodigo.thunderstructs.services.MockMatchService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.LinkedList;
 import java.util.List;
 
 public class TournamentGenerator {
+
 
     public static Tournament populate () {
 
@@ -53,4 +56,5 @@ public class TournamentGenerator {
         tournament.setGroups(mockGroupService.getGroupList());
         return tournament;
     }
+
 }
