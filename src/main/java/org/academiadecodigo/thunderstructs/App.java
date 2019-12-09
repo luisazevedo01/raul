@@ -1,6 +1,7 @@
 package org.academiadecodigo.thunderstructs;
 
 import org.academiadecodigo.thunderstructs.models.Tournament;
+import org.academiadecodigo.thunderstructs.models.TournamentGenerator;
 import org.academiadecodigo.thunderstructs.models.User;
 import org.springframework.stereotype.Component;
 

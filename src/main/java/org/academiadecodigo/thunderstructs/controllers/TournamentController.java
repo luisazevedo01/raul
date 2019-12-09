@@ -43,7 +43,7 @@ public class TournamentController {
         model.addAttribute("tournament", tournament);
         model.addAttribute("groups", groups);
 
-        return "/tournament";
+        return "tournament";
     }
 
 
