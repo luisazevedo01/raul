@@ -1,6 +1,6 @@
 package org.academiadecodigo.thunderstructs.controllers;
 
-import org.academiadecodigo.thunderstructs.models.UserLoginDto;
+import org.academiadecodigo.thunderstructs.command.UserLoginDto;
 import org.academiadecodigo.thunderstructs.services.LoginServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,7 +21,7 @@ public class LoginController {
     }
 
 
-    @RequestMapping(method = RequestMethod.GET, path = {"/login"})
+    @RequestMapping(method = RequestMethod.GET, path = {"/login", "/"})
     public String loginHome(Model model){
         model.addAttribute("user", new UserLoginDto());
         return "login";

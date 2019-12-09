@@ -1,6 +1,6 @@
 package org.academiadecodigo.thunderstructs.services;
 
-import org.academiadecodigo.thunderstructs.PlayerComparator;
+import org.academiadecodigo.thunderstructs.utility.PlayerComparator;
 import org.academiadecodigo.thunderstructs.models.Group;
 import org.academiadecodigo.thunderstructs.models.Match;
 import org.academiadecodigo.thunderstructs.models.Player;

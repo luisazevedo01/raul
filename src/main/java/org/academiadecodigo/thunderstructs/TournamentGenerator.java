@@ -1,4 +1,4 @@
-package org.academiadecodigo.thunderstructs.models;
+package org.academiadecodigo.thunderstructs;
 
 import org.academiadecodigo.thunderstructs.models.Player;
 import org.academiadecodigo.thunderstructs.models.Team;
