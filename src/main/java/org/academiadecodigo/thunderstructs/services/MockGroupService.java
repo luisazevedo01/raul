@@ -31,14 +31,16 @@ public class MockGroupService implements GroupService {
                 groupB.getPlayers().add(player);
             }
         }
-            groups.add(groupA);
-            groups.add(groupB);
+        groups.add(groupA);
+        groups.add(groupB);
+
+
         return groups;
     }
 
     @Override
     public Group getGroup(Integer id) {
-        return getGroupList().get(id - 1);
+        return getGroupList().get(id);
     }
 
     @Override
@@ -53,14 +55,14 @@ public class MockGroupService implements GroupService {
     }
 
     @Override
-    public List<Match> getMatches( Group group) {
+    public List<Match> getMatches(Group group) {
         return group.getMatches();
     }
 
     @Override
     public List<Player> getGroupPlayers(int id) {
 
-        return groups.get(id - 1).getPlayers();
+        return groups.get(id).getPlayers();
     }
 
 
