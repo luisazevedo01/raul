@@ -35,6 +35,10 @@ public class MockGroupService implements GroupService {
         }
         groups.add(groupA);
         groups.add(groupB);
+        groups.add(groupA);
+        groups.add(groupB);
+        groups.add(groupA);
+        groups.add(groupB);
         return groups;
     }
 

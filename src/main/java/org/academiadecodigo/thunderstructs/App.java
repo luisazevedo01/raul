@@ -23,7 +23,7 @@ public class App {
         populate();
     }
 
-    private void populate(){
+    private void populate() {
         User user1 = new User();
         user1.setName("Luís Ferreta");
         user1.setUsername("luisinho");
@@ -37,8 +37,8 @@ public class App {
         users.add(user1);
         users.add(user2);
 
-
-        tournamentList.add(tournamentGenerator.populate());
+        List<Tournament> tournaments = tournamentGenerator.populate();
+        tournamentList.addAll(tournaments);
     }
 
     public List<User> getUsers() {

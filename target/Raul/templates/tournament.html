@@ -1,32 +1,50 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <link rel="stylesheet" type="text/css" href="../resources/genericstyle.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Tournament Status</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="resources/genericstyle.css">
-
+<style>
+    .container{
+        position: absolute;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+    }
+</style>
 </head>
 <body>
-<div class=" container bg">
+
+<div class="bg ">
     <div class="container">
-        <div th:each="group : ${tournament.getGroups()}">
-            <table class="table table-striped">
-                <tr>
-                    <th th:text="${group.name}"></th>
-                    <th>Player</th>
-                    <th>Points</th>
-                </tr>
-                <tr th:each="player : ${group.getPlayers()}">
-                    <td></td>
-                    <td th:text="${player.name}"></td>
-                    <td th:text="${player.score}"></td>
-                </tr>
-            </table>
-            <td><a class="btn btn-success" th:href="@{'/calendar/' + ${group.id}}">Calendar</a></td>
+        <div class="row">
+            <div class="col" th:each="group : ${tournament.getGroups()}" style="padding-top: 30px">
+                <div class="card">
+                    <div class="card-body ">
+                        <table class="table table-striped ">
+                                <tr class="col">
+                                    <th th:text="${group.name}"></th>
+                                    <th>Player</th>
+                                    <th>Points</th>
+                                </tr>
+                                <tr th:each="player : ${group.getPlayers()}">
+                                    <td></td>
+                                    <td th:text="${player.name}"></td>
+                                    <td th:text="${player.score}"></td>
+                                </tr>
+                        </table>
+                        <td><a class="btn btn-success" th:href="@{'/calendar/' + ${group.id}}">Calendar</a></td>
+                    </div>
+                </div>
         </div>
     </div>
+</div>
+</div>
 </div>
 
 </body>

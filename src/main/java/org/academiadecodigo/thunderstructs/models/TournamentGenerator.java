@@ -21,11 +21,11 @@ public class TournamentGenerator {
     }
 
 
-    public Tournament populate () {
+    public List<Tournament> populate () {
 
+        int id = 1;
 
          setTeamsNames();
-
         Player player1 = new Player();
         Player player2 = new Player();
         Player player3 = new Player();
@@ -59,10 +59,18 @@ public class TournamentGenerator {
         mockGroupService.generateGroups(list);
 
         Tournament tournament = new Tournament();
-        tournament.setName("Teste");
-        tournament.setId(1);
+        tournament.setName("Taça da Liga");
+        tournament.setId(id++);
         tournament.setPlayers(list);
         tournament.setGroups(mockGroupService.getGroupList());
-        return tournament;
+        Tournament tournament1 = new Tournament();
+        tournament1.setName("Taça de Portugal");
+        tournament1.setId(id++);
+        tournament1.setPlayers(list);
+        tournament1.setGroups(mockGroupService.getGroupList());
+        LinkedList<Tournament> linkedList = new LinkedList<>();
+        linkedList.add(tournament);
+        linkedList.add(tournament1);
+        return linkedList;
     }
 }
