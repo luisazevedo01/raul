@@ -32,7 +32,7 @@
                 <input type="password" id="password" class="fadeIn third" name="login" placeholder="password"
                        th:field="*{password}">
                 <input type="submit" class="fadeIn fourth" value="Log In">
-                <p><a id="link" href="register.html">No account? Click here!</a></p>
+                <p><a id="link" th:href="@{/register}">No account? Click here!</a></p>
             </form>
         </div>
     </div>
