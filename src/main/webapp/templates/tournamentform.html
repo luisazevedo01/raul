@@ -40,7 +40,7 @@
             </tr>
             <tr th:each="player : ${tournament.players}">
                 <td th:text="${player.name}"></td>
-                <td th:text="${player.team}"></td>
+                <td th:text="${player.getTeam().name}"></td>
                 <td th:text="${player.score}"></td>
             </tr>
             <tr>

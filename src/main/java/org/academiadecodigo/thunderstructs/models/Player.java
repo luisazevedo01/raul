@@ -3,7 +3,7 @@ package org.academiadecodigo.thunderstructs.models;
 public class Player {
 
     private String name;
-    private Team team;
+    private Teams team;
     private int score;
 
     public String getName() {
@@ -14,11 +14,11 @@ public class Player {
         this.name = name;
     }
 
-    public Team getTeam() {
+    public Teams getTeam() {
         return team;
     }
 
-    public void setTeam(Team team) {
+    public void setTeam(Teams team) {
         this.team = team;
     }
 
