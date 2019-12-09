@@ -46,7 +46,6 @@ public class TournamentController {
         return "/tournament";
     }
 
-    @RequestMapping
 
 
 }

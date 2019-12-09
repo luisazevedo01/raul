@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="resources/genericstyle.css">
+    <link rel="stylesheet" type="text/css" href="resources/loginStyle.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Login page</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <div class="bg">
+        <div class="wrapper fadeInDown">
+            <div id="formContent">
+                <!-- Tabs Titles -->
+
+                <!-- Icon -->
+                <div class="fadeIn first">
+                    <img src="resources/image (11).png" id="icon" alt="User Icon"/>
+                </div>
+
+                <!-- Login Form -->
+                <form id="login-form" class="form" th:object="${user}" th:action="@{'/register'}" method="post">
+                    <h3 class="text-center text-info">Register</h3>
+                    <div class="form-group">
+                        <input type="text" name="name" id="name" class="fadeIn second" th:field="*{name}" placeholder="Name">
+                        <p class="help-block" th:if="${#fields.hasErrors('name')}"
+                              th:errors="*{name}">Name error messages</p>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="username" id="username" class="fadeIn third" placeholder="Username"
+                               th:field="*{username}">
+                        <p class="help-block" th:if="${#fields.hasErrors('username')}"
+                              th:errors="*{username}">First Name error messages</p>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" id="password" class="fadeIn fourth"
+                               th:field="*{password}" placeholder="Password">
+                        <p  class="help-block" th:if="${#fields.hasErrors('password')}"
+                              th:errors="*{password}">First Name error messages</p>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-info btn-md" name="action" value="save">Submit</button>
+                        <button type="cancel" class="btn btn-danger" name="action" value="cancel">Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
