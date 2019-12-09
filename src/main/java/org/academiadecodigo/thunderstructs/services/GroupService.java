@@ -20,4 +20,5 @@ public interface GroupService {
 
     List<Player> getGroupPlayers(int id);
 
+    List<Match> generateMatches(int groupId);
 }
