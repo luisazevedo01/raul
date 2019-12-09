@@ -57,4 +57,11 @@ public class MockGroupService implements GroupService {
         return group.getMatches();
     }
 
+    @Override
+    public List<Player> getGroupPlayers(int id) {
+
+        return groups.get(id - 1).getPlayers();
+    }
+
+
 }

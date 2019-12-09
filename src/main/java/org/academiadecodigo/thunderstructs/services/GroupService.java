@@ -18,5 +18,6 @@ public interface GroupService {
 
     List<Match> getMatches(Group group);
 
+    List<Player> getGroupPlayers(int id);
 
 }

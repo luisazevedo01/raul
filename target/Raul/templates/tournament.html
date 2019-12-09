@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="resources/genericstyle.css">
+
+</head>
+<body>
+<div class="bg">
+    <div th:each="group : ${tournament.getGroups()}">
+        <table class="table table-striped">
+            <tr>
+                <th th:text="${group.name}"></th>
+                <th>Player</th>
+                <th>Points</th>
+            </tr>
+            <tr th:each="player : ${group.getPlayers()}">
+                <td></td>
+                <td th:text="${player.name}"></td>
+                <td th:text="${player.score}"></td>
+            </tr>
+        </table>
+        <td><a class="btn btn-success" th:href="@{'/calendar/' + ${group.id}}">Calendar</a></td>
+    </div>
+</div>
+
+</body>
+</html>

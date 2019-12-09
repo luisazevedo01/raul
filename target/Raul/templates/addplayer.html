@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <link rel="stylesheet" type="text/css" href="resources/genericstyle.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .formBody span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="bg">
+    <div class="container-fluid form">
+        <form th:object="${player}" th:action="@{/addPlayer}" method="post">
+
+            <table class="table table-striped table-dark">
+                <thead>
+                <tr>
+                    <th scope="col">Player Name</th>
+                    <th scope="col">Team</th>
+                </tr>
+                </thead>
+                <tbody class="formBody">
+                <tr>
+                    <td>
+                        <input type="text" name="name" th:field="*{name}"/>
+                        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">
+                </span>
+                    </td>
+                    <td>
+                        <input type="text" name="team" th:field="*{team.name}"/>
+                        <span th:if="${#fields.hasErrors('team')}" th:errors="*{team.name}">
+                </span>
+                    </td>
+                    <td>
+                        <input  class="btn btn-primary" type="submit" value="Submit"/>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>
+</body>
+</html>
