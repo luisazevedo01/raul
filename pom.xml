@@ -79,9 +79,9 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.2</version>
                 <configuration>
-                    <url>http://localhost:8080/manager/text</url>
-                    <server>tomcat</server>
-                    <path>/raul</path>
+                <url>http://localhost:8080/manager/text</url>
+                <server>tomcat</server>
+                <path>/raul</path>
                 </configuration>
             </plugin>
 

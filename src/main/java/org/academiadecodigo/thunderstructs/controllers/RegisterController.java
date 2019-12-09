@@ -30,7 +30,7 @@ public class RegisterController {
         return "register";
     }
 
-    @RequestMapping(method = RequestMethod.POST , path = {"/register"})
+    @RequestMapping(method = RequestMethod.POST , path = {"/register"}, params = "action=save")
     public String register(RedirectAttributes model, @Valid @ModelAttribute("user") User user, BindingResult bindingResult){
 
         if (bindingResult.hasErrors()) {
@@ -42,6 +42,11 @@ public class RegisterController {
         }
 
         return "register";
+    }
+
+    @RequestMapping(method = RequestMethod.POST , path = {"/register"}, params = "action=cancel")
+    public String register(){
+        return "redirect:login";
     }
 
     @RequestMapping(method = RequestMethod.GET , value = "/register/{username}")

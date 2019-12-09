@@ -4,7 +4,6 @@ import org.academiadecodigo.thunderstructs.PlayerComparator;
 import org.academiadecodigo.thunderstructs.models.Group;
 import org.academiadecodigo.thunderstructs.models.Match;
 import org.academiadecodigo.thunderstructs.models.Player;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedList;
@@ -15,7 +14,6 @@ public class MockGroupService implements GroupService {
 
 
     private List<Group> groups;
-    private MockMatchService mockMatchService;
 
     @Override
     public List<Group> generateGroups(List<Player> players) {
@@ -53,7 +51,7 @@ public class MockGroupService implements GroupService {
 
     @Override
     public Group getGroup(Integer id) {
-        return getGroupList().get(id );
+        return getGroupList().get(id - 1);
     }
 
     @Override
@@ -68,7 +66,7 @@ public class MockGroupService implements GroupService {
     }
 
     @Override
-    public List<Match> getMatches(Group group) {
+    public List<Match> getMatches( Group group) {
         return group.getMatches();
     }
 
@@ -77,4 +75,6 @@ public class MockGroupService implements GroupService {
 
         return groups.get(id - 1).getPlayers();
     }
+
+
 }

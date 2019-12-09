@@ -1,4 +1,4 @@
-package org.academiadecodigo.thunderstructs.models;
+package org.academiadecodigo.thunderstructs.command;
 
 public class UserLoginDto {
 
